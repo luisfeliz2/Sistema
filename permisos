@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Recibe un nombre de archivo como parámetro e indica mediante un mensaje si el archivo es de: lectura, escritura, 
+#y/o ejecutable por el propietario.
+
+file=$1
+
+if [ -r $file ]; then
+  echo "$file es de lectura"
+fi
+
+if [ -w $file ]; then
+  echo "$file es de escritura"
+fi
+
+if [ -x $file ]; then
+  echo "$file es ejecutable"
+fi
+

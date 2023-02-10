@@ -1,0 +1,3 @@
+#!/bin/bash
+#cat /etc/passwd > passwd
+date >> /home/luisfb/passwd

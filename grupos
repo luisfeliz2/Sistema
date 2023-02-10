@@ -1,0 +1,10 @@
+#!/bin/bash
+
+read -p "introduce un grupo:  " grupo
+
+read -p "introduce numero de usuario:  " user
+
+echo $grupo
+echo $user
+
+sudo 

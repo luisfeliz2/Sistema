@@ -1,0 +1,32 @@
+#!/bin/bash
+
+
+echo "Primer parametro: asc o desc"
+echo "Segundo parametro: fichero"
+
+n=$1
+
+while [ $# -ne 0 ]
+do
+
+
+	echo $1 >> fichero
+	
+	shift 
+done
+
+
+
+if [ $n = 'asc' ]; then
+	sort fichero
+	echo ordenado en orden ascendente
+	
+elif [ $n = 'desc' ]; then
+	sort -r fichero	
+	echo ordenado en orden descendente
+else
+	echo $n no corresponde con: asc o desc
+	
+fi
+
+

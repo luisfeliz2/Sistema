@@ -1,0 +1,40 @@
+#!/bin/bash
+salir=0
+while [ $salir -eq 0 ]  
+do
+	echo 	"1.-mostrar empleados"
+	echo	"2.-alta de todos los empleados"
+	echo	"3.-bloquear todos los empleados"
+	echo	"4.-baja de todos los empleados"
+	echo	"5.-salir"
+	read opcion
+	case $opcion in
+	
+		1) while IFS=, read nombre salario
+		do
+			echo "Nombre: $nombre , Salario:$salario"
+		done < fich;;
+		
+		
+		2) while IFS=, read nombre salario
+		do
+			sudo useradd $nombre
+		done < fich;;
+		
+		3)while IFS=, read nombre salario
+		do
+			sudo passwd --lock $nombre
+		done < fich;;
+		
+		
+		4) while IFS=, read nombre salario
+		do
+			sudo userdel $nombre
+		done < fich;;
+		
+		5) while IFS=, read nombre salario
+		do
+			exit
+		done 
+	esac
+done

@@ -1,0 +1,33 @@
+#!/bin/bash
+echo "1) Mostrar procesos"
+echo "2) matar proceso"
+echo "3) limpiar pantalla"
+echo "5) salirr"
+read opcion 
+while [ $opcion != 5 ]
+do
+
+	
+	if [ $opcion -eq 1 ]; then
+		ps
+	fi
+	
+	if [ $opcion -eq 2 ]; then
+		ps
+		read -p "introduce el proceso que quiere matar:  " proc
+		kill -9 $proc
+		 
+		
+	fi
+	
+	if [ $opcion -eq 3 ]; then
+	clear
+	fi
+	
+	
+	echo "1) Mostrar procesos"
+	echo "2) matar proceso"
+	echo "3) limpiar pantalla"
+	echo "5) salir"
+	read opcion
+done
